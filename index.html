@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Módulo 06 - Innovación Educativa</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;800&family=Space+Grotesk:wght@300;500;700&display=swap" rel="stylesheet">
+    <!-- Iconos Lucide -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Montserrat', 'sans-serif'],
+                        mono: ['Space Grotesk', 'monospace'],
+                    },
+                    colors: {
+                        'ocean': '#020617',
+                        'glass': 'rgba(255, 255, 255, 0.05)',
+                        'neon': '#06b6d4',
+                        'accent': '#8b5cf6'
+                    },
+                    backdropBlur: {
+                        xs: '2px',
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            background-color: #020617;
+            background-image: 
+                radial-gradient(at 0% 0%, rgba(6, 182, 212, 0.15) 0px, transparent 50%),
+                radial-gradient(at 100% 100%, rgba(139, 92, 246, 0.15) 0px, transparent 50%);
+            background-attachment: fixed;
+            color: #e2e8f0;
+            overflow-x: hidden;
+        }
+        
+        .glass-panel {
+            background: var(--glass);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .disruptive-title {
+            background: linear-gradient(to right, #fff, #94a3b8);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        /* Animación suave para elementos al hacer scroll */
+        .fade-in-up {
+            animation: fadeInUp 0.8s ease-out forwards;
+            opacity: 0;
+            transform: translateY(20px);
+        }
+
+        @keyframes fadeInUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
+</head>
+<body class="antialiased selection:bg-neon selection:text-ocean">
+
+    <!-- Navegación Superior / Datos Académicos -->
+    <nav class="fixed top-0 w-full z-50 glass-panel border-b border-white/5">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row justify-between items-center py-4 text-xs tracking-widest font-mono uppercase text-gray-400">
+                <div class="text-center md:text-left mb-2 md:mb-0">
+                    <span class="text-neon font-bold">Módulo 06</span> // Innovación y Tendencias
+                </div>
+                <div class="text-center md:text-right">
+                    Bloque 02 // <span class="text-white">2025</span>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="relative pt-32 pb-12 lg:pt-48 lg:pb-20 px-6">
+        <div class="max-w-5xl mx-auto text-center">
+            <div class="inline-block mb-4 px-3 py-1 rounded-full border border-neon/30 bg-neon/10 text-neon text-xs font-bold tracking-widest uppercase fade-in-up" style="animation-delay: 0.1s;">
+                Actividad Grupal
+            </div>
+            <h1 class="text-5xl md:text-7xl font-extrabold mb-6 disruptive-title font-mono fade-in-up" style="animation-delay: 0.2s;">
+                TECNOLOGÍAS<br>EDUCATIVAS
+            </h1>
+            <p class="text-xl md:text-2xl text-gray-400 mb-8 font-light fade-in-up" style="animation-delay: 0.3s;">
+                Profesora: <span class="text-white font-semibold">Magister Silvia Castell</span>
+            </p>
+            
+        </div>
+    </header>
+
+    <main class="max-w-4xl mx-auto px-6 space-y-24 pb-24">
+
+        <!-- 1. Video de Presentación + Texto Intro -->
+        <section class="space-y-8">
+            <!-- Contenedor del Video / Presentación Incrustada -->
+            <div class="glass-panel rounded-2xl p-1 overflow-hidden shadow-[0_0_40px_rgba(6,182,212,0.15)]">
+                <div class="w-full aspect-video bg-black/40 rounded-xl overflow-hidden relative border border-white/5">
+                     <iframe 
+                        class="absolute inset-0 w-full h-full"
+                        src="https://www.youtube.com/embed/ygtF8C9ZxGg?si=vD2KTp3FCHJBnq6E" 
+                        title="Video de Presentación Inicial" 
+                        frameborder="0" 
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                        referrerpolicy="strict-origin-when-cross-origin" 
+                        allowfullscreen>
+                    </iframe>
+                </div>
+            </div>
+
+            <!-- Texto de Navegación -->
+            <div class="text-center space-y-6 py-8">
+                <p class="text-lg md:text-xl leading-relaxed text-gray-300 font-light border-l-2 border-neon pl-6 text-left md:text-center md:border-l-0">
+                    Aquí encontrarás una presentación innovadora y visualmente limpia: cada sección se despliega como una nueva coordenada en tu mapa de navegación, combinando claridad, estética y propósito.
+                </p>
+                <div class="inline-flex items-center gap-3 text-neon/80 bg-neon/5 px-6 py-4 rounded-xl border border-neon/10">
+                    <i data-lucide="anchor" class="w-6 h-6"></i>
+                    <p class="font-mono text-sm md:text-base italic">
+                        "Respirá hondo, ajustá las velas y dejate llevar por una travesía diseñada para inspirar, aprender y crear."
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- 2. Realidad Aumentada (Cuadro Comparativo) -->
+        <section class="relative">
+            <div class="absolute -left-20 top-0 text-9xl font-bold text-white/5 select-none -z-10 font-mono">01</div>
+            <div class="flex items-center gap-3 mb-6">
+                <i data-lucide="scan-eye" class="text-neon w-8 h-8"></i>
+                <h2 class="text-3xl font-bold text-white">Realidad Aumentada</h2>
+            </div>
+            
+            <div class="glass-panel rounded-2xl p-8 hover:shadow-[0_0_50px_rgba(139,92,246,0.1)] transition-all">
+                <h3 class="text-xl font-mono text-gray-400 mb-6 uppercase tracking-wider">Cuadro Comparativo</h3>
+                
+                <!-- Tabla Minimalista -->
+                <div class="overflow-x-auto">
+                    <table class="w-full text-left border-collapse min-w-[800px]">
+                        <thead>
+                            <tr class="border-b border-white/10 text-neon font-mono text-xs md:text-sm uppercase tracking-wider">
+                                <th class="py-4 px-4 w-[15%] align-top">Metodologías</th>
+                                <th class="py-4 px-4 w-[25%] align-top">Definición</th>
+                                <th class="py-4 px-4 w-[20%] align-top">Diferencias</th>
+                                <th class="py-4 px-4 w-[20%] align-top">Ventajas</th>
+                                <th class="py-4 px-4 w-[20%] align-top">Desventajas</th>
+                            </tr>
+                        </thead>
+                        <tbody class="text-gray-300 text-sm leading-relaxed">
+                            <tr class="hover:bg-white/5 transition-colors group">
+                                <!-- Metodologías -->
+                                <td class="py-6 px-4 align-top border-b border-white/5 font-bold text-white">
+                                    <span class="inline-flex items-center gap-2 text-neon">
+                                        ✅ Realidad Aumentada
+                                    </span>
+                                </td>
+                                
+                                <!-- Definición -->
+                                <td class="py-6 px-4 align-top border-b border-white/5 space-y-3">
+                                    <p>Con el uso de esta herramienta permitimos a los alumnos que visualicen la realidad desde una nueva perspectiva.</p>
+                                    <p>Es una tecnología que combina el mundo real con elementos digitales, como imágenes, sonidos e información generada por computadora, superponiéndolos sobre nuestro entorno físico a través de dispositivos como teléfonos inteligentes, tabletas o gafas especiales.</p>
+                                </td>
+                                
+                                <!-- Diferencias -->
+                                <td class="py-6 px-4 align-top border-b border-white/5 space-y-3">
+                                    <p>Involucra a los estudiantes en procesos de aprendizaje mejoradores haciendo uso de modelos tridimensionales superpuestos a la propia realidad.</p>
+                                    <p>A diferencia de la realidad virtual, superpone elementos digitales en el mundo real enriqueciéndolo. En cambio la realidad virtual, crea un entorno completamente nuevo y digital que reemplaza la realidad física.</p>
+                                </td>
+                                
+                                <!-- Ventajas -->
+                                <td class="py-6 px-4 align-top border-b border-white/5">
+                                    <ul class="list-disc pl-4 space-y-2 marker:text-neon">
+                                        <li>Tiene la capacidad de transformar el mismo momento del aprendizaje introduciendo formas nuevas y adicionales.</li>
+                                        <li>Puede hacer que las clases sean más atractivas y que la información sea más comprensible.</li>
+                                        <li>Mejora el aprendizaje a través de la visualización de conceptos complejos y la práctica en entornos simulados.</li>
+                                        <li>Mejora la experiencia al hacerla más interactiva e inmersiva.</li>
+                                    </ul>
+                                </td>
+                                
+                                <!-- Desventajas -->
+                                <td class="py-6 px-4 align-top border-b border-white/5">
+                                    <ul class="list-disc pl-4 space-y-2 marker:text-red-400">
+                                        <li>La brecha digital, no todos los estudiantes tienen los mismos accesos a los equipos tecnológicos que soporten modelos tridimensionales.</li>
+                                        <li>El alto costo de desarrollo e implementación, los problemas de privacidad y seguridad.</li>
+                                        <li>Los posibles efectos en la salud como fatiga visual, mareos y desorientación.</li>
+                                        <li>Limitaciones técnicas y de uso.</li>
+                                    </ul>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+
+        <!-- 3. Podcast -->
+        <section class="relative">
+            <div class="absolute -right-20 top-0 text-9xl font-bold text-white/5 select-none -z-10 font-mono">02</div>
+            <div class="flex items-center justify-end gap-3 mb-6">
+                <h2 class="text-3xl font-bold text-white">Podcast</h2>
+                <i data-lucide="headphones" class="text-accent w-8 h-8"></i>
+            </div>
+
+            <div class="glass-panel rounded-2xl p-8 border-l-4 border-l-accent">
+                <div class="flex flex-col md:flex-row gap-8 items-center">
+                    <div class="w-32 h-32 bg-gradient-to-br from-accent to-purple-900 rounded-xl flex items-center justify-center shadow-lg shrink-0 hidden md:flex">
+                        <i data-lucide="mic" class="w-12 h-12 text-white"></i>
+                    </div>
+                    <div class="w-full">
+                        <h3 class="text-2xl font-bold text-white mb-1">Design Thinking</h3>
+                        <p class="text-gray-400 mb-6 text-sm">Explorando metodologías ágiles en el aula.</p>
+                        
+                        <!-- SoundCloud Iframe Embed -->
+                        <div class="rounded-xl overflow-hidden shadow-lg border border-white/10">
+                            <iframe width="100%" height="166" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/soundcloud%253Atracks%253A2224561991&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true"></iframe>
+                            <div style="font-size: 10px; color: #cccccc;line-break: anywhere;word-break: normal;overflow: hidden;white-space: nowrap;text-overflow: ellipsis; font-family: Interstate,Lucida Grande,Lucida Sans Unicode,Lucida Sans,Garuda,Verdana,Tahoma,sans-serif;font-weight: 100; background: #000; padding: 5px 10px;">
+                                <a href="https://soundcloud.com/travesia-altamar678591968" title="Capitanes del Conocimiento" target="_blank" style="color: #cccccc; text-decoration: none;">Capitanes del Conocimiento</a> · 
+                                <a href="https://soundcloud.com/travesia-altamar678591968/design_thinking_empatia_inno-1" title="Design_Thinking_Empatía_Innovación_Resolución_Problemas" target="_blank" style="color: #cccccc; text-decoration: none;">Design_Thinking_Empatía_Innovación_Resolución_Problemas</a>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 4. Presentación Escape Room -->
+        <section class="relative">
+             <div class="absolute -left-20 top-0 text-9xl font-bold text-white/5 select-none -z-10 font-mono">03</div>
+            <div class="flex items-center gap-3 mb-6">
+                <i data-lucide="puzzle" class="text-neon w-8 h-8"></i>
+                <h2 class="text-3xl font-bold text-white">Escape Room Educativo</h2>
+            </div>
+
+            <div class="glass-panel rounded-2xl p-1 overflow-hidden shadow-[0_0_40px_rgba(6,182,212,0.15)]">
+                <!-- Iframe de Gamma incrustado -->
+                <div class="w-full h-[600px] md:h-[700px] bg-black/40 rounded-xl overflow-hidden relative">
+                     <iframe 
+                        src="https://gamma.app/embed/Escape-Room-Educativo-zepo69dg6eeemxq" 
+                        style="width: 100%; height: 100%; border: none;" 
+                        allow="fullscreen" 
+                        title="Escape Room Educativo">
+                    </iframe>
+                </div>
+            </div>
+        </section>
+
+         <!-- 5. Video Síntesis -->
+         <section class="relative">
+            <div class="absolute -right-20 top-0 text-9xl font-bold text-white/5 select-none -z-10 font-mono">04</div>
+            <div class="flex items-center justify-end gap-3 mb-6">
+                <h2 class="text-3xl font-bold text-white">Video Síntesis</h2>
+                <i data-lucide="film" class="text-neon w-8 h-8"></i>
+            </div>
+
+            <div class="glass-panel rounded-2xl p-1 overflow-hidden shadow-[0_0_40px_rgba(6,182,212,0.15)]">
+                <!-- Video Pictory Incrustado -->
+                <div class="w-full aspect-video bg-black/40 rounded-xl overflow-hidden relative border border-white/5">
+                     <iframe 
+                        src="https://video.pictory.ai/20251205154530210b249f05debd74827822bd202dd8844a4/202512051552192761cLl5otJwSKapOG" 
+                        style="width: 100%; height: 100%; border: none;" 
+                        allow="autoplay; fullscreen" 
+                        title="Video Síntesis Pictory">
+                    </iframe>
+                </div>
+            </div>
+        </section>
+
+        <!-- Download Section -->
+        <section class="text-center pt-12 pb-20">
+            <a href="https://docs.google.com/document/d/1-y1-_RgmwMEeZ93qdB4hUXtNUKmnOWZb/edit?usp=sharing&ouid=106792559593837536727&rtpof=true&sd=true" target="_blank" class="group relative inline-flex items-center justify-center px-8 py-4 font-bold text-black transition-all duration-200 bg-neon font-mono rounded-full focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-neon ring-offset-ocean overflow-hidden">
+                <span class="absolute inset-0 w-full h-full -mt-1 rounded-lg opacity-30 bg-gradient-to-b from-transparent via-transparent to-black"></span>
+                <span class="relative flex items-center gap-2 group-hover:gap-4 transition-all">
+                    Descargar Documento Final
+                    <i data-lucide="download" class="w-5 h-5"></i>
+                </span>
+            </a>
+            <p class="mt-6 text-sm text-gray-600">© 2025 Innovación Educativa</p>
+        </section>
+
+        <!-- SECCIÓN DE INTEGRANTES (MOVIDA AL FINAL) -->
+        <section class="pt-8 pb-12 border-t border-white/10">
+            <h2 class="text-2xl font-bold text-neon text-center mb-6 font-mono uppercase tracking-wider">
+                Integrantes del Equipo
+            </h2>
+            <p class="text-gray-300 text-center mb-10 max-w-2xl mx-auto font-medium text-lg">
+                Conocé al equipo de capitanes que guiará y pensó en este trabajo.
+            </p>
+
+            <div class="flex flex-wrap gap-8 justify-center">
+                <!-- Capitana Natalia -->
+                <div class="flex-1 min-w-[300px] max-w-[350px] group">
+                    <div class="glass-panel p-4 rounded-xl hover:bg-white/5 transition-all duration-300">
+                        <h3 class="text-white font-bold text-center mb-4 group-hover:text-neon transition-colors">
+                            Capitana Natalia Kuperman
+                        </h3>
+                        <div class="relative w-full pt-[56.25%] bg-black rounded-xl overflow-hidden shadow-lg border border-neon/30">
+                            <iframe 
+                                class="absolute inset-0 w-full h-full"
+                                src="https://www.youtube.com/embed/P7pmTfUGHng"
+                                title="Capitana Natalia Kuperman"
+                                frameborder="0"
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                allowfullscreen>
+                            </iframe>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Capitán Emanuel -->
+                <div class="flex-1 min-w-[300px] max-w-[350px] group">
+                    <div class="glass-panel p-4 rounded-xl hover:bg-white/5 transition-all duration-300">
+                        <h3 class="text-white font-bold text-center mb-4 group-hover:text-neon transition-colors">
+                            Capitán Emanuel Ferrandiz
+                        </h3>
+                         <div class="relative w-full pt-[56.25%] bg-black rounded-xl overflow-hidden shadow-lg border border-neon/30">
+                            <iframe 
+                                class="absolute inset-0 w-full h-full"
+                                src="https://www.youtube.com/embed/DUwK7NUIAII"
+                                title="Capitán Emanuel Ferrandiz"
+                                frameborder="0"
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                allowfullscreen>
+                            </iframe>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Capitana Alejandra -->
+                <div class="flex-1 min-w-[300px] max-w-[350px] group">
+                    <div class="glass-panel p-4 rounded-xl hover:bg-white/5 transition-all duration-300">
+                        <h3 class="text-white font-bold text-center mb-4 group-hover:text-neon transition-colors">
+                            Capitana Alejandra Chuquel
+                        </h3>
+                         <div class="relative w-full pt-[56.25%] bg-black rounded-xl overflow-hidden shadow-lg border border-neon/30">
+                            <iframe 
+                                class="absolute inset-0 w-full h-full"
+                                src="https://www.youtube.com/embed/C4DhsFYx-O4"
+                                title="Capitana Alejandra Chuquel"
+                                frameborder="0"
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                allowfullscreen>
+                            </iframe>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <script>
+        // Inicializar iconos
+        lucide.createIcons();
+    </script>
+</body>
+</html>
